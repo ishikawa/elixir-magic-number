@@ -1,0 +1,2 @@
+defmodule MagicNumber do
+end
