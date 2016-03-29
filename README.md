@@ -2,6 +2,8 @@
 
 MagicNumber is the module to determine a file's type from its [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files).
 
+**It is currently heavily under development**, The public API should not be considered stable.
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
@@ -40,3 +42,7 @@ iex(2)> MagicNumber.detect(content)
 - image/jpeg
 - image/png
 - image/gif
+
+## License
+
+MIT
