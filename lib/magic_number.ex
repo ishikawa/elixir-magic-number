@@ -26,8 +26,14 @@ defmodule MagicNumber do
 
   """
   @spec detect(binary) :: {:ok, media_type} | :error
+  # GIF
   def detect("GIF87a" <> _), do: {:ok, {:image, :gif}}
   def detect("GIF89a" <> _), do: {:ok, {:image, :gif}}
+
+  # JPEG
+  def detect(<<0xff, 0xd8, 0xff, _ :: binary>>), do: {:ok, {:image, :jpeg}}
+
+  # error
   def detect(_), do: :error
 
 end
