@@ -6,9 +6,9 @@ MagicNumber is the module to determine a file's type from its [magic number](htt
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed from [Hex](https://hex.pm/) as:
 
-  1. Add magic_number to your list of dependencies in `mix.exs`:
+Add magic_number to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -16,7 +16,7 @@ def deps do
 end
 ```
 
-  2. Ensure magic_number is started before your application:
+Ensure magic_number is started before your application:
 
 ```elixir
 def application do
