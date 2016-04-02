@@ -1,6 +1,7 @@
 # MagicNumber
 
-[![CI Status](https://travis-ci.org/ishikawa/elixir-magic-number.svg?branch=master)](https://travis-ci.org/ishikawa/elixir-magic-number?branch=master)
+[![CI Status](https://travis-ci.org/ishikawa/elixir-magic-number.svg?branch=master)](https://travis-ci.org/ishikawa/elixir-magic-number?branch=master) [![Hex.pm](https://img.shields.io/hexpm/v/magic_number.svg)](https://hex.pm/packages/magic_number)
+[![Hexdocs.pm](https://img.shields.io/badge/docs-html-blue.svg)](https://hexdocs.pm/magic_number)
 
 MagicNumber is the module to determine a file's type from its [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files).
 
