@@ -41,6 +41,9 @@ defmodule MagicNumber do
   def detect("II*\0" <> _), do: {:ok, {:image, :tiff}}
   def detect("MM\0*" <> _), do: {:ok, {:image, :tiff}}
 
+  # PDF
+  def detect("%PDF" <> _), do: {:ok, {:application, :pdf}}
+
   # error
   def detect(_), do: :error
 
