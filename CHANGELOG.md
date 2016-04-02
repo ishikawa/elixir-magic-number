@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.0.2 (dev)
+## 0.0.2
 
 ### New supported file formats
 
