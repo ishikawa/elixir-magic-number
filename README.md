@@ -43,6 +43,7 @@ iex(2)> MagicNumber.detect(content)
 - image/png
 - image/gif
 - image/tiff
+- application/pdf
 
 ## License
 
