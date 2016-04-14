@@ -1,7 +1,7 @@
 defmodule MagicNumber do
   @moduledoc """
   The module to determine a file's type from its
-  [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files).
+  [magic number](https://en.wikipedia.org/wiki/File_format#Magic_number).
   """
 
   @typedoc """

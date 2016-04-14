@@ -3,7 +3,7 @@
 [![CI Status](https://travis-ci.org/ishikawa/elixir-magic-number.svg?branch=master)](https://travis-ci.org/ishikawa/elixir-magic-number?branch=master) [![Hex.pm](https://img.shields.io/hexpm/v/magic_number.svg)](https://hex.pm/packages/magic_number)
 [![Hexdocs.pm](https://img.shields.io/badge/docs-html-blue.svg)](https://hexdocs.pm/magic_number)
 
-MagicNumber is the module to determine a file's type from its [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)#Magic_numbers_in_files).
+MagicNumber is the module to determine a file's type from its [magic number](https://en.wikipedia.org/wiki/File_format#Magic_number).
 
 **It is currently heavily under development**, The public API should not be considered stable.
 
@@ -15,7 +15,7 @@ Add magic_number to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:magic_number, "~> 0.0.1"}]
+  [{:magic_number, "~> 0.0.2"}]
 end
 ```
 
@@ -38,7 +38,7 @@ iex(2)> MagicNumber.detect(content)
 {:ok, {:image, :gif}}
 ```
 
-## Supported files
+## Supported file types
 
 - image/jpeg
 - image/png
