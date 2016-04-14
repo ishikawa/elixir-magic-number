@@ -25,5 +25,6 @@ defmodule MagicNumberTest do
     assert_detect_file "000.png", {:image, :png}
     assert_detect_file "000.tiff", {:image, :tiff}
     assert_detect_file "000.pdf", {:application, :pdf}
+    assert_detect_file "000.zip", {:application, :zip}
   end
 end
