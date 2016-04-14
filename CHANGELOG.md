@@ -2,12 +2,16 @@
 
 ## 0.0.3 (dev)
 
+### New supported file types
+
+- `.zip`
+
 ## 0.0.2
 
-### New supported file formats
+### New supported file types
 
-- [TIFF](https://en.wikipedia.org/wiki/Tagged_Image_File_Format)
-- [PDF](https://en.wikipedia.org/wiki/Portable_Document_Format)
+- `.tiff`
+- `.pdf`
 
 ## 0.0.1
 
