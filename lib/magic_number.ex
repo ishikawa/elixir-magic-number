@@ -5,12 +5,14 @@ defmodule MagicNumber do
   """
 
   @typedoc """
-  A media type is a two-part identifier for file format.
+  A media type is a two-part identifier for file format. For example:
 
-      application/zip
-      image/png
+  ```elixir
+  {:application, :zip} # application/zip
+  {:image, :png}       # image/png
+  ```
 
-  - [IANA list of official media types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+  See [IANA list of official media types](https://www.iana.org/assignments/media-types/media-types.xhtml).
   """
   @type media_type :: {atom, atom}
 
@@ -43,6 +45,11 @@ defmodule MagicNumber do
 
   # PDF
   def detect("%PDF" <> _), do: {:ok, {:application, :pdf}}
+
+  # ZIP
+  def detect(<<0x50, 0x4b, 0x03, 0x04, _ :: binary>>), do: {:ok, {:application, :zip}}
+  def detect(<<0x50, 0x4b, 0x05, 0x06, _ :: binary>>), do: {:ok, {:application, :zip}}
+  def detect(<<0x50, 0x4b, 0x07, 0x08, _ :: binary>>), do: {:ok, {:application, :zip}}
 
   # error
   def detect(_), do: :error
