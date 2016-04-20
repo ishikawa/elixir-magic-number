@@ -15,7 +15,7 @@ Add magic_number to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:magic_number, "~> 0.0.3"}]
+  [{:magic_number, "~> 0.0.4"}]
 end
 ```
 
@@ -46,6 +46,7 @@ iex(2)> MagicNumber.detect(content)
 - image/tiff
 - application/pdf
 - application/zip
+- application/gzip
 
 ## License
 

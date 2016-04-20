@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## 0.0.3 (dev)
+## 0.0.4
+
+- `.gzip`
+
+## 0.0.3
 
 ### New supported file types
 

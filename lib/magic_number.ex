@@ -51,6 +51,9 @@ defmodule MagicNumber do
   def detect(<<0x50, 0x4b, 0x05, 0x06, _ :: binary>>), do: {:ok, {:application, :zip}}
   def detect(<<0x50, 0x4b, 0x07, 0x08, _ :: binary>>), do: {:ok, {:application, :zip}}
 
+  # GZIP
+  def detect(<<0x1f, 0x8b, _ :: binary>>), do: {:ok, {:application, :gzip}}
+
   # error
   def detect(_), do: :error
 
