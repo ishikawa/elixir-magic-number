@@ -16,6 +16,23 @@ defmodule MagicNumber do
   """
   @type media_type :: {atom, atom}
 
+  @rules [
+    # image
+    {{:image, :gif},  ["GIF87a", "GIF89a"]},
+    {{:image, :jpeg}, [<<0xff, 0xd8, 0xff>>]},
+    {{:image, :png},  [<<0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a>>]},
+    {{:image, :tiff},  ["II*\0", "MM\0*"]},
+
+    # application
+    {{:application, :pdf},  ["%PDF"]},
+    {{:application, :zip},  [
+      <<0x50, 0x4b, 0x03, 0x04>>,
+      <<0x50, 0x4b, 0x05, 0x06>>,
+      <<0x50, 0x4b, 0x07, 0x08>>,
+    ]},
+    {{:application, :gzip},  [<<0x1f, 0x8b>>]},
+  ]
+
   @doc """
   Determine media type from its contents.
 
@@ -28,31 +45,10 @@ defmodule MagicNumber do
 
   """
   @spec detect(binary) :: {:ok, media_type} | :error
-  # GIF
-  def detect("GIF87a" <> _), do: {:ok, {:image, :gif}}
-  def detect("GIF89a" <> _), do: {:ok, {:image, :gif}}
 
-  # JPEG
-  def detect(<<0xff, 0xd8, 0xff, _ :: binary>>), do: {:ok, {:image, :jpeg}}
-
-  # PNG
-  def detect(<<0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, _ :: binary>>),
-    do: {:ok, {:image, :png}}
-
-  # TIFF
-  def detect("II*\0" <> _), do: {:ok, {:image, :tiff}}
-  def detect("MM\0*" <> _), do: {:ok, {:image, :tiff}}
-
-  # PDF
-  def detect("%PDF" <> _), do: {:ok, {:application, :pdf}}
-
-  # ZIP
-  def detect(<<0x50, 0x4b, 0x03, 0x04, _ :: binary>>), do: {:ok, {:application, :zip}}
-  def detect(<<0x50, 0x4b, 0x05, 0x06, _ :: binary>>), do: {:ok, {:application, :zip}}
-  def detect(<<0x50, 0x4b, 0x07, 0x08, _ :: binary>>), do: {:ok, {:application, :zip}}
-
-  # GZIP
-  def detect(<<0x1f, 0x8b, _ :: binary>>), do: {:ok, {:application, :gzip}}
+  for {media_type, headers} <- @rules, magic <- headers do
+    def detect(unquote(magic) <> _), do: {:ok, unquote(media_type)}
+  end
 
   # error
   def detect(_), do: :error
