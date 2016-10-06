@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.5-dev
+
+- Rewrite internal implementation.
+
 ## 0.0.4
 
 - `.gzip`
