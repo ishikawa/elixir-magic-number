@@ -16,6 +16,7 @@ defmodule MagicNumber do
   """
   @type media_type :: {atom, atom}
 
+  # Rules :: [{media_type, [binary]}]
   @rules [
     # image
     {{:image, :gif},  ["GIF87a", "GIF89a"]},
