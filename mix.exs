@@ -8,8 +8,8 @@ defmodule MagicNumber.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: "MagicNumber is the module to determine a file's type from its magic number.",
-     package: package,
-     deps: deps,
+     package: package(),
+     deps: deps(),
      source_url: "https://github.com/ishikawa/elixir-magic-number",
      docs: [extras: ["README.md"]]]
   end
