@@ -19,19 +19,20 @@ defmodule MagicNumber do
   # Rules :: [{media_type, [binary]}]
   @rules [
     # image
-    {{:image, :gif},  ["GIF87a", "GIF89a"]},
-    {{:image, :jpeg}, [<<0xff, 0xd8, 0xff>>]},
-    {{:image, :png},  [<<0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a>>]},
-    {{:image, :tiff},  ["II*\0", "MM\0*"]},
+    {{:image, :gif}, ["GIF87a", "GIF89a"]},
+    {{:image, :jpeg}, [<<0xFF, 0xD8, 0xFF>>]},
+    {{:image, :png}, [<<0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A>>]},
+    {{:image, :tiff}, ["II*\0", "MM\0*"]},
 
     # application
-    {{:application, :pdf},  ["%PDF"]},
-    {{:application, :zip},  [
-      <<0x50, 0x4b, 0x03, 0x04>>,
-      <<0x50, 0x4b, 0x05, 0x06>>,
-      <<0x50, 0x4b, 0x07, 0x08>>,
-    ]},
-    {{:application, :gzip},  [<<0x1f, 0x8b>>]},
+    {{:application, :pdf}, ["%PDF"]},
+    {{:application, :zip},
+     [
+       <<0x50, 0x4B, 0x03, 0x04>>,
+       <<0x50, 0x4B, 0x05, 0x06>>,
+       <<0x50, 0x4B, 0x07, 0x08>>
+     ]},
+    {{:application, :gzip}, [<<0x1F, 0x8B>>]}
   ]
 
   @doc """
@@ -53,5 +54,4 @@ defmodule MagicNumber do
 
   # error
   def detect(_), do: :error
-
 end
