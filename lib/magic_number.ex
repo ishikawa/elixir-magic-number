@@ -32,7 +32,9 @@ defmodule MagicNumber do
        <<0x50, 0x4B, 0x05, 0x06>>,
        <<0x50, 0x4B, 0x07, 0x08>>
      ]},
-    {{:application, :gzip}, [<<0x1F, 0x8B>>]}
+    {{:application, :gzip}, [<<0x1F, 0x8B>>]},
+    {{:application, :exe}, [<<0x4D, 0x5A>>]},
+    {{:application, :dmg}, [<<0x78, 0x01>>]}
   ]
 
   @doc """
