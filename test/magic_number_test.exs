@@ -28,5 +28,7 @@ defmodule MagicNumberTest do
     assert_detect_file("000.pdf", {:application, :pdf})
     assert_detect_file("000.zip", {:application, :zip})
     assert_detect_file("000.gz", {:application, :gzip})
+    assert_detect_file("000.exe", {:application, :exe})
+    assert_detect_file("000.dmg", {:application, :dmg})
   end
 end

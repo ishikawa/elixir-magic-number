@@ -47,6 +47,8 @@ iex(2)> MagicNumber.detect(content)
 - application/pdf
 - application/zip
 - application/gzip
+- application/x-msdownload(exe)
+- application/x-apple-diskimage(dmg)
 
 ## License
 
